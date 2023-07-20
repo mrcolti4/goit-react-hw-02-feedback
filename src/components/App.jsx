@@ -1,17 +1,19 @@
 import { Component } from 'react';
+
 import { Section } from './Section/Section';
 import { FeedbackOptions } from './FeedbackOptions/FeedbackOptions';
 import { Statistics } from './Statistics/Statistics';
 import { Notification } from './Notification/Notification';
 import { FEEDBACK_CATEGORY } from 'constants/constants';
-const state = {};
+
+const feedback = {};
 
 for (const key in FEEDBACK_CATEGORY) {
-  state[key] = 0;
+  feedback[key] = 0;
 }
 
 export class App extends Component {
-  state = state;
+  state = { ...feedback };
 
   onLeaveFeedback = e => {
     const feedback = e.target.textContent;
